@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+manifest
+readme
+t/t01basicTests.t
+lib/Crypt/Rot47.pm
