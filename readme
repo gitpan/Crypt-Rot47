@@ -1,4 +1,4 @@
-Crypt::Rot47 version 0.01
+Crypt::Rot47 version 0.02
 ================================
 
 This module applies the Rot47 substitution cipher on text, thereby scrambling the text and making it difficult for others to read. Applying the same Rot47 substitution cipher on the scrambled text well then restore the original text.

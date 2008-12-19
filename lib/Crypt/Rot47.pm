@@ -6,9 +6,6 @@ our @EXPORT_OK = qw(rot47);
 
 our $VERSION = 0.1;
 
-######################################
-# Constructor                        # 
-######################################
 sub new
 {
     my ($class) = @_;
@@ -20,9 +17,6 @@ sub new
     return bless [], $class;
 }
 
-######################################
-# Public Methods                     #
-######################################
 sub encrypt
 {
     return rot47($_[1]);
@@ -48,7 +42,7 @@ sub rot47
 
 =head1 NAME
 
-Crypt::Rot47 - Perl extension for encrypting and decrypting text using the Rot47 substitution cipher. 
+Crypt::Rot47 - Perl extension for encrypting and decrypting ASCII text using the Rot47 substitution cipher. 
 
 =head1 SYNOPSIS
 
@@ -81,18 +75,20 @@ decrypt it.
 
 =item I<PACKAGE>->new()
 
+  use Crypt::Rot47;
+  my $cipher = new Crypt::Rot47();
+
 Returns a newly created C<Crypt::Rot47> object.
 
-=item I<PACKAGE>->rot47(I<SCALAR>)
-
-Encrypts or decrypts the provided text. For Rot47, encryption and decryption
-are the same operation, so calling rot47 on text twice has no effect.
-
 =item I<$OBJ>->encrypt(I<SCALAR>)
+
+  my $cipherText = $cipher->encrypt('Hello, world!');
 
 Returns the ciphertext of the provided plaintext. 
 
 =item I<$OBJ>->decrypt(I<ARRAY>)
+
+  my $plainText  = $cipher->decrypt($cipherText);
 
 Returns the plaintext of the provided ciphertext. Note that because
 encrypting and decrypting using Rot47 are exactly the same operation,
@@ -100,9 +96,30 @@ you could technically just call encrypt() to decrypt the ciphertext,
 but I provided both methods to be consistent with the API of other
 Crypt:: modules.
 
+=back
+
+=head2 Exportable Subroutines
+
+=over 4
+
+=item rot47(I<SCALAR>)
+
+  use Crypt::Rot47 qw(rot47);
+
+  my $cipherText = rot47('Hello, world!'); 
+  my $plainText = rot47($cipherText);
+
+Encrypts or decrypts the provided text. For Rot47, encryption and decryption
+are the same operation, so calling rot47 on text twice has no effect.
+
+=back
+
 =head1 SEE ALSO
 
 Crypt::Rot13 - A similar module that applies the Rot13 substitution cipher to text.
+
+Crypt::Blowfish
+Crypt::IDEA
 
 =head1 AUTHOR
 
@@ -115,6 +132,5 @@ Copyright (C) 2008 by Zachary Blair
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
-
 
 =cut
