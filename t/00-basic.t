@@ -3,7 +3,7 @@
 
 #########################
 
-use Test::More tests => 4;
+use Test::More tests => 5;
 BEGIN { use_ok('Crypt::Rot47') };
 
 # Test that the appropriate methods exist
@@ -17,7 +17,13 @@ my $ciphertext = $cipher->encrypt($plaintext);
 isnt($ciphertext, $plaintext, 'encrypt scrambles text');
 
 # Test that the text is unscrambed by decryption
-my $decryptedText = $cipher->decrypt($ciphertext);
-is($decryptedText, $plaintext, 'decrypt unscrambles scrambled text');
+my $decrypted_text = $cipher->decrypt($ciphertext);
+is($decrypted_text, $plaintext, 'decrypt unscrambles scrambled text');
+
+# Test that the ciphertext generated matches what we know to be correct
+my $fox = 'The Quick Brown Fox Jumps Over The Lazy Dog.';
+my $encrypted_fox = $cipher->encrypt($fox);
+is ($encrypted_fox, '%96 "F:4< qC@H? u@I yF>AD ~G6C %96 {2KJ s@8]',
+    'encryption of test message generates expected ciphertext');
 
 

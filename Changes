@@ -8,3 +8,9 @@ Revision history for Perl extension Crypt::Rot47.
 
 0.03  Fri Dec 19 23:30:00 2008
     - fixed the $VERSION variable so that it is now correct
+
+0.04  Thu Feb 25 23:30:00 2010
+    - fixed some documentation
+
+0.05  Thu Feb 25 24:30:00 2010
+    - removed world writable permission from directory

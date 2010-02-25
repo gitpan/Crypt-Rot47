@@ -9,5 +9,5 @@ WriteMakefile(
     PREREQ_PM         => { 'Test::More' => 0 },
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Crypt/Rot47.pm', # retrieve abstract from module
-       AUTHOR         => 'Zachary Blair <zack_blair@hotmail.com>') : ()),
+       AUTHOR         => 'Zachary Blair <zblair@cpan.org>') : ()),
 );
