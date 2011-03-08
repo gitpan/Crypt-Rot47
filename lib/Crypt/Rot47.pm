@@ -4,7 +4,7 @@ use warnings;
 use base 'Exporter';
 our @EXPORT_OK = qw(rot47);
 
-our $VERSION = 0.05;
+our $VERSION = 0.04;
 
 sub new
 {

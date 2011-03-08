@@ -1,4 +1,4 @@
-Crypt::Rot47 version 0.05
+Crypt::Rot47 version 0.04
 ================================
 
 This module applies the ROT47 substitution cipher to ASCII text, thereby scrambling
