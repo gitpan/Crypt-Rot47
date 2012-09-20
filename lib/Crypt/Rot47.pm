@@ -4,7 +4,7 @@ use warnings;
 use base 'Exporter';
 our @EXPORT_OK = qw(rot47);
 
-our $VERSION = 0.04;
+our $VERSION = 0.06;
 
 sub new
 {
@@ -135,7 +135,7 @@ Zachary Blair, E<lt>zblair@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2010 by Zachary Blair
+Copyright (C) 2012 by Zachary Blair
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
